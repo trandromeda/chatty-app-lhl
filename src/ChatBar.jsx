@@ -2,19 +2,20 @@ import React, {Component} from 'react';
 
 class ChatBar extends Component {
 
-  handleUserFieldKeyUp = (e) => {
-    if (e.key === 'Enter') {
-      this.props.handleUserChange(e.target.value)
-    }
-  }
-
   handleMessageFieldKeyUp = (e) => {
     if (e.key === 'Enter') {
+      console.log('Message entered');
       this.props.handleNewMessage(e.target.value)
       e.target.value = "";
     }
   }
 
+  handleUserFieldKeyUp = (e) => {
+    if (e.key === 'Enter') {
+      this.props.handleUserChange(e.target.value)
+    }
+  }
+  
   render() {
     console.log("Rendering <ChatBar/>");
     return (

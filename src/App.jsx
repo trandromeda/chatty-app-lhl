@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import NavBar from './NavBar.jsx';
 import ChatBar from './ChatBar.jsx';
 import MessageList from './MessageList.jsx';
-const ws = new WebSocket('ws://localhost:4000');
+const ws = new WebSocket('ws://localhost:3001');
 const uuid = require('node-uuid');
 
 class App extends Component {
@@ -20,7 +20,7 @@ class App extends Component {
       let messages = this.state.messages.concat(data);
       let type = data.type;
       switch(type) {
-        case "updateUserCount":
+        case "userCountChanged":
           console.log(`Received from server: ${event.data}`);
           this.setState({userCount: data.userCount, userColor: data.userColor});
           break;
@@ -54,6 +54,7 @@ class App extends Component {
         newUsername: newUserName,
         content: this.state.currentUser.name + " changed their name to: " + newUserName
       };
+      console.log('New username');
       this.setState({currentUser: {name: newUserName}})
       ws.send(JSON.stringify(username));
     }
