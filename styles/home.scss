@@ -1,3 +1,81 @@
-h1 {
-  color: tomato;
+html, body {
+  background: white;
+  color: black;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  margin: 70px 0;
+}
+.wrapper {
+  font-size: 14px;
+}
+nav {
+  background: tomato;
+  border-bottom: 1px solid black;
+  height: 60px;
+  left: 0;
+  padding: 0 10px;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+nav h1 {
+  margin: 0;
+  padding: 0 10px;
+  line-height: 60px;
+}
+nav div {
+  float: right;
+  font-size: 14px;
+  padding: 12px;
+  margin: 0;
+}
+#message-list {
+  height: calc(100vh - 131px);
+}
+#message-list .message {
+  display: flex;
+  padding: 5px;
+}
+#message-list .message .username,#message-list .message .content {
+  overflow: hidden;
+  margin: 5px;
+  padding: 0 10px;
+}
+#message-list .message .username {
+  flex: 2;
+  font-weight: 700;
+}
+#message-list .message .content {
+  flex: 8;
+}
+#message-list .message .content .img {
+  width: 40%
+}
+#message-list .message .system {
+  font-style: italic;
+  padding: 5px 20px;
+}
+footer {
+  background: tomato;
+  border-top: 1px solid black;
+  bottom: 0;
+  display: flex;
+  left: 0;
+  padding: 5px;
+  position: fixed;
+  right: 0;
+}
+footer input {
+  border: 1px solid black;
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  margin: 5px;
+  padding: 0 9px;
+}
+footer #username {
+  flex: 2;
+}
+footer #new-message {
+  flex: 8;
 }
